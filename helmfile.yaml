@@ -1,0 +1,15 @@
+helmDefaults:
+  wait: true
+  atomic: true
+
+environments:
+  production:
+    values:
+      - environments/production/values.yaml.gotmpl
+
+releases:
+  - name: hello-world-app
+    namespace: hello-world
+    chart: charts/hello-world-app
+    values:
+      - environments/production/values.yaml.gotmpl
