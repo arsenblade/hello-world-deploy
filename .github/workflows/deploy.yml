@@ -1,12 +1,8 @@
 name: Deploy to Kubernetes
 
 on:
-  workflow_dispatch:
-    inputs:
-      image_tag:
-        description: "Image tag to deploy"
-        required: true
-        type: string
+  repository_dispatch:
+    types: [deploy]
 
 jobs:
   deploy:
